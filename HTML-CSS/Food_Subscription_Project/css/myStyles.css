@@ -1,0 +1,477 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: rgb(246, 55, 84);
+    --dark-grey: rgb(128, 128, 128);
+    --dark-blue-bg: rgb(34, 38, 42);
+    --light-blue-bg: rgb(240, 255, 255);
+    --black-bg : rgb(59, 56, 56);
+}
+
+button,
+a{
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+section{
+    padding: 50px;
+}
+
+
+/* section headings */
+.feature__heading,
+.steps__heading,
+.review__heading, 
+.pricing__heading,
+.contact__heading {
+    color: var(--dark-grey);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+.feature__heading::after,
+.steps__heading::after,
+.review__heading::after,
+.pricing__heading::after,
+.contact__heading::after {
+    content: '';
+    border-bottom: 2px solid var(--primary);
+    margin: 20px auto;
+    display: block;
+    width: 14%;
+    text-align: center;
+}
+
+/* header */
+header{
+    background: url('../assets/images/foodies_pizza_ready_for_baking.png') center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    background-color: #000;
+    inset: 0;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.nav-item a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.header-overlay{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 20px;
+    left: 30%;
+    z-index: 2;
+}
+
+.header-overlay h1{
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 5rem;
+}
+
+.header-overlay h1>span{
+    color: var(--primary);
+}
+
+.header-overlay__actions{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+}
+
+.header-overlay__btn{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 40px;
+    padding: 20px 30px;
+    font-size: 1.2rem;
+}
+
+.header-overlay__btn--filled{
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.header-overlay__btn--outlined{
+    background-color: transparent;
+}
+
+/* Features section */
+.feature__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.feature__card{
+    box-shadow: 2px 2px 28px 5px lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--dark-grey);
+    padding: 20px;
+    width: 20%;
+    gap: 0.6rem;
+}
+
+.feature__card i{
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.feature__card h4{
+    font-size: 1.2rem;
+    font-weight: 550;
+}
+
+.feature__card p{
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+/* Steps to follow section */
+.steps{
+    background-color: #e5e5e5;
+}
+
+.steps__container{
+    margin: 30px auto;
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.steps__col-list{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.steps__col-list__step{
+    font-size: 20px;
+    color: gray;
+    display: flex;
+    align-items: center;
+    margin: 10% 0px;
+}
+
+.steps__col-list__number{
+    border: 1px solid var(--primary);
+    padding: 20px 30px;
+    font-size: 30px;
+    color: var(--primary);
+    border-radius: 100%;
+}
+
+/* Review Section */
+.review{
+    background-image: url('../assets/images/foodies_pizza_ready_for_baking.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.review::before{
+    content: '';
+    background-color: #000;
+    opacity: 0.6;
+    inset: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.review__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.review__heading{
+    z-index: 2 !important;
+    position: relative;
+}
+
+.review__card{
+    padding: 1.2rem;
+    width: 300px;
+    display: flex;
+    gap: 0.8rem;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-blue-bg);
+    z-index: 2;
+}
+
+.review__card img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    border: none;
+}
+
+.review__card h5{
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 100;
+}
+
+.review__card p{
+    line-height: 20px;
+    font-size: 0.9rem;
+    color: grey;
+    text-align: center;
+}
+
+.review__rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+    color: var(--primary);
+}
+
+/* PRICING SECTION */
+.pricing{
+    background-color: #e1e1e1;
+}
+
+.pricing__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.pricing__card{
+    width: 250px;
+    border: 0.1rem solid gray;
+    border-radius: 8px;
+    padding: 1.8rem 1.05rem;
+    background-color: transparent;
+    transition: transform 0.8s ease-in;
+    color: var(--dark-grey);
+    position: relative;
+}
+
+.pricing__card:hover{
+    background-color: #fff;
+    box-shadow: 2px 2px 20px 2px gray;
+    transform: scale(1.1);
+}
+
+.pricing__card h5{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.pricing__card hr{
+    margin: 12px 0px;
+}
+
+.pricing__card__price span{
+    font-size: 3rem;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.pricing__card__list {
+    padding-left: 0;
+}
+
+.pricing__card__list i{
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.pricing__card__list li{
+    line-height: 1.8rem;
+}
+
+.pricing__card_list li i{
+    color: var(--primary);
+}
+
+.pricing__card__btn{
+    padding: 0.8rem 1.4rem;
+    border-radius: 1rem;
+    border: none;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pricing__card__btn--filled{
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    transition: all 0.6s ease-in-out;
+}
+
+.pricing__card__btn:hover{
+    background-color: #fff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+/* CONTACT US SECTION */
+.contact{
+    background-color: var(--dark-blue-bg);
+}
+
+.contact__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.contact__form{
+    color: var(--dark-grey);
+}
+
+.contact__input{
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;   
+}
+
+.contact__input label{
+    margin: 10px 0px;
+}
+
+.contact__input input,
+.contact__input textarea,
+.contact__input select{
+    padding: 8px;
+}
+
+.contact__input:nth-child(5){
+    display: inline-block;
+}
+
+.contact__submit{
+    border-radius: 10px;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--primary);
+}
+
+.contact__submit:hover{
+    transform: scale(1.1);
+    transition: transform 0.4s ease-in-out;
+}
+
+/* FOOTER  */
+footer{
+    background-color: var(--black-bg);
+}
+
+footer .link>a,
+footer .media-icon>a{
+    color: #fff !important;
+}
+
+.footer__container{
+    padding: 20px 40px;
+}
+
+.footer__container,
+.footer__links, 
+.footer__media{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__links,
+.footer__media{
+    width: 30%;
+    font-size: 1.2rem;
+}
+
+.footer__media .media-icon{
+    height: 30px;
+    width: 30px;
+}
+
+.footer__copyright{
+    color: var(--dark-grey);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
