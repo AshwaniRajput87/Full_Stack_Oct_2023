@@ -1,15 +1,13 @@
-// import methods from slice {fetchDataStart, fetchDataSuccess, fetchDataFailure}
+import UserSlice from '../redux/slice/UserSlice'
+import Axios from 'axios';
 
 export const fetchUserMiddleware = async(dispatch, uid) =>{
-
-    const {data, error, isLoading} = useFetchData();
-    dispatch(fetchDataStart());
-
+    dispatch(UserSlice.actions.fetchDataStart());
     try{
-        
-        dispatch(fetchDataSuccess(data));
+        const url = `https://jsonplaceholder.typicode.com/users/${uid}`
+        const response = await Axios.get(url)
+        dispatch(UserSlice.actions.fetchDataSuccess(response.data));
     }catch(error){
-        dispatch(fetchDataFailure(error));
+        dispatch(UserSlice.actions.fetchDataFailure(error));
     }
-
 }

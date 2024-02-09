@@ -1,32 +1,26 @@
 // create the slice
 
-// name: 'userSlice'
-/***
- * 
- * initialState: {
+import { createSlice } from "@reduxjs/toolkit";
+const UserSlice = createSlice({
+    name: 'userSlice',
+    initialState: {
       data: null,
       error: null,
       isLoading: false
-   }
- * 
- * */ 
+    },
+    reducers: {
+      fetchDataStart: (state) =>{
+        state.isLoading = true;
+      },
+      fetchDataSuccess: (state, val) => {
+        state.isLoading = false;
+        state.data = val
+      },
+      fetchDataFailure: (state,err) => {
+        state.isLoading = false;
+        state.error = err
+      }
+    }
+})
 
-
-   /**
-    * 
-    *   reducers: {
-    *     fetchDataStart: (state) => {
-    * 
-    *     }
-    * 
-    *    fetchDataSuccess: (state) => {
-    * 
-    *    }
-    * 
-    *    fetchDataFailure: (state) => {
-    * 
-    *    }
-    * 
-    *   }
-    * 
-    */
+export default UserSlice;
